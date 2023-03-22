@@ -8,7 +8,7 @@ package edu.uqu.cs;
 * Make sure to complete and submit your lab
 */
 
-
+import java.util.Scanner;
 public class App{
 
 /**  
@@ -42,16 +42,61 @@ public class App{
 * Output: 2255464228626
 *
 */
- 
+public static void twisters() {
+
+    for (int i = 1; i <= 110; i++) {
+
+        if (i % 2 == 0) {
+            System.out.print("Tweetle");
+
+            if (i % 4 == 0) {
+                System.out.print("Beetle");
+            }
+
+            if (i % 6 == 0) {
+                System.out.print("Poodle");
+            }
+        }else {
+            System.out.print(" " + i + " ");
+        }
+    }
+}
+
+public static void phoneKeypad(String text) {
+    String result = "";
+    for (int i = 0; i < text.length(); i++) {
+        char ch = text.toUpperCase().charAt(i);
+        if (ch >= 'A' && ch <= 'C') {
+            result += "2";
+        } else if (ch >= 'D' && ch <= 'F') {
+            result += "3";
+        } else if (ch >= 'G' && ch <= 'I') {
+            result += "4";
+        } else if (ch >= 'J' && ch <= 'L') {
+            result += "5";
+        } else if (ch >= 'M' && ch <= 'O') {
+            result += "6";
+        } else if (ch >= 'P' && ch <= 'S') {
+            result += "7";
+        } else if (ch >= 'T' && ch <= 'V') {
+            result += "8";
+        } else if (ch >= 'W' && ch <= 'Z') {
+            result += "9";
+        }
+    }
+    System.out.println(result);
+}
     public static void main(String [] args) {
-        
+        Scanner scanner = new Scanner(System.in);
 
         /* Write your code here */
      
        //call method twisters()
-       //prompt user to enter a string 
+       //prompt user to enter a string
        //call method phoneKeypad(string)
-
+        twisters();
+        System.out.print("Enter a string >> ");
+        phoneKeypad(scanner.nextLine());
 
     }
 
